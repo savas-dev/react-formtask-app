@@ -4,11 +4,20 @@ import TaskList from './components/TaskList'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [tasks, setTasks] = useState([])
+  const createTask = (title, textarea) =>{
+    const createdTasks = [
+      ...tasks,{
+        id: Math.round(Math.random() * 999999),
+        title: title,
+        textarea: textarea
+      }
+    ]
+  }
 
   return (
    <div className="App">
-      <TaskCreate />
+      <TaskCreate onCreate={createTask} />
       <h2>Görevler</h2>
       <TaskList />
    </div>
