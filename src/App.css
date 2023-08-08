@@ -1,0 +1,36 @@
+
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.taskCreate{
+    width: 450px;
+}
+
+.taskForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.taskLabel{
+    margin: 10px 0px;
+}
+
+.taskInput{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.createButton{
+    margin: 10px 0px;
+    padding: 10px;
+    border: 1px solid green;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
