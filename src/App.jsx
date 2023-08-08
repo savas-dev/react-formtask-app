@@ -12,14 +12,34 @@ function App() {
         title: title,
         textarea: textarea
       }
-    ]
+    ];
+    setTasks(createdTasks);
+  }
+
+  const deleteTaskByID = (id)=>{
+    const afterDeletingTasks = tasks.filter((task)=>{
+      return task.id !== id;
+    });
+    setTasks(afterDeletingTasks);
+  }
+
+
+  const editByTaskID = (id, updateTitle, descTitle) =>{
+    const updatedTasks = tasks.map((task) =>{
+      if(task.id === id){
+        return {id, title, updateTitle, textarea: updatedTaskDesc}
+      }
+      return task;
+
+    });
+    setTasks(updatedTasks)
   }
 
   return (
    <div className="App">
       <TaskCreate onCreate={createTask} />
       <h2>Görevler</h2>
-      <TaskList />
+      <TaskList tasks={tasks} onDelete={deleteTaskByID} onUpdate={{editByTaskID}}/>
    </div>
   );
 }
